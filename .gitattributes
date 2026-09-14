@@ -1,0 +1,14 @@
+* text=auto eol=lf
+
+# Windows 批处理必须保持 CRLF，否则部分环境无法执行
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# 二进制资源不做行尾转换
+*.png binary
+*.ico binary
+*.jpg binary
+*.exe binary
+*.zip binary
+*.bin binary
+*.db binary

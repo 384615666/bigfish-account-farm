@@ -1,0 +1,65 @@
+{
+  "name": "bigfish-account-farm",
+  "productName": "大肥鱼养殖基地",
+  "version": "0.2.3",
+  "description": "CommandCode 与智谱 BigModel 多账号统一管理工具",
+  "license": "AGPL-3.0",
+  "main": "src/main/index.cjs",
+  "private": true,
+  "build": {
+    "appId": "com.bigfish.accountfarm",
+    "productName": "大肥鱼养殖基地",
+    "directories": {
+      "output": "release",
+      "buildResources": "build"
+    },
+    "files": [
+      "!**/node_modules",
+      "!build{,/**/*}",
+      "!release{,/**/*}",
+      "!docs{,/**/*}",
+      "!scripts{,/**/*}",
+      "src/main/**/*",
+      "dist-renderer/**/*",
+      "build/icon.png",
+      "build/icon.ico",
+      "build/tray/**/*",
+      "package.json"
+    ],
+    "win": {
+      "icon": "build/icon.ico",
+      "target": [
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "guid": "7a3d4421-51dd-5e2f-b2bc-adbcd16c7299",
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "大肥鱼养殖基地"
+    }
+  },
+  "scripts": {
+    "dev": "vite --port 5173",
+    "build:renderer": "vite build",
+    "icon": "node scripts/gen-icon.mjs",
+    "tray:icons": "python scripts/gen-tray-icons.py",
+    "dist": "npm run check:pack && npm run build:renderer && electron-builder --win nsis",
+    "start": "electron .",
+    "smoke": "electron . --smoke",
+    "selftest": "electron scripts/self-test.cjs",
+    "e2e": "electron scripts/e2e-check.cjs",
+    "livecheck": "electron . --livecheck",
+    "check:pack": "node scripts/check-pack-root.mjs"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "vite": "^5.4.11"
+  }
+}
