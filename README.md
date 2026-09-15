@@ -14,8 +14,8 @@
 
 到 [Releases](../../releases) 页面下载最新版安装包：
 
-- `大肥鱼养殖基地 Setup <版本>.exe` — Windows 安装包（NSIS），双击安装，桌面生成快捷方式。
-- `大肥鱼养殖基地-<版本>-portable.zip` — 免安装版，解压后直接运行目录里的 `大肥鱼养殖基地.exe`。
+- `bigfish-account-farm-Setup-<版本>.exe` — Windows 安装包（NSIS），双击安装，桌面生成快捷方式。
+- `bigfish-account-farm-<版本>-portable.zip` — 免安装版，解压后直接运行目录里的 `大肥鱼养殖基地.exe`。
 
 安装包未做代码签名，Windows SmartScreen 可能提示"未知发布者"，选「更多信息 → 仍要运行」即可。
 

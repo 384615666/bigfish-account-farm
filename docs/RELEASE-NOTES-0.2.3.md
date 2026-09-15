@@ -4,14 +4,25 @@ CommandCode / 智谱 BigModel / DeepSeek 多账号统一管理工具，首个开
 
 ## 下载
 
-| 文件 | 说明 |
-| --- | --- |
-| `大肥鱼养殖基地 Setup 0.2.3.exe` | Windows 安装包（NSIS），双击安装，会在桌面和开始菜单创建快捷方式 |
-| `大肥鱼养殖基地-0.2.3-portable.zip` | 免安装版，解压后直接运行目录里的 `大肥鱼养殖基地.exe` |
+| 文件 | 大小 | 说明 |
+| --- | --- | --- |
+| `bigfish-account-farm-Setup-0.2.3.exe` | 78.8 MB | Windows 安装包（NSIS），双击安装，会在桌面和开始菜单创建快捷方式 |
+| `bigfish-account-farm-0.2.3-portable.zip` | 110.4 MB | 免安装版，解压后直接运行目录里的 `大肥鱼养殖基地.exe` |
+
+校验值（SHA-256）：
+
+```
+97a28567f086c5406eca1cbffa58cfe7d99b4b23056c33874b95426c008fdc4f  bigfish-account-farm-Setup-0.2.3.exe
+032872ccabf61ca8ac0c8423041bbd0c3cd21cce5d52b6147e86ed9a8ee1cdaa  bigfish-account-farm-0.2.3-portable.zip
+```
 
 安装包未做代码签名，Windows SmartScreen 可能提示"未知发布者"，选「更多信息 → 仍要运行」即可。
 
 **本软件不包含任何账号数据。** 所有账号与凭据只保存在本机 `%APPDATA%\大肥鱼养殖基地\`，不会上传到任何服务器。
+
+## 源码
+
+<https://github.com/384615666/bigfish-account-farm>（AGPL-3.0，美术素材授权见仓库内 `NOTICE.md`）
 
 ## 本次亮点
 
