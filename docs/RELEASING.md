@@ -21,7 +21,7 @@ npm run dist                # check:pack + build:renderer + electron-builder --w
 ## 2. 推送到 GitHub
 
 ```bash
-git remote add origin https://github.com/<你的用户名>/<仓库名>.git
+git remote add origin https://github.com/384615666/bigfish-account-farm.git
 git branch -M main
 git push -u origin main
 ```
