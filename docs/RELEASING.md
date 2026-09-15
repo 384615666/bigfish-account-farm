@@ -54,3 +54,34 @@ git push -u origin main
 
 - `build.nsis.guid` 固定不变，老版本用户装新版本是**覆盖升级**，不会并存两份。
 - 应用图标与立绘不在 AGPL 授权范围内，二次分发时要么保留原素材要么换成自己的。
+
+## 提交身份（重要）
+
+GitHub 的 Contributors 是按 **commit 的 author/committer 邮箱**匹配账号的，不是按推送者。邮箱一旦匹配到别人的
+GitHub 账号，对方就会出现在你的贡献者列表里。
+
+本仓库历史上踩过这个坑：全局配置里是 `bigfish <bigfish@users.noreply.github.com>`，而 GitHub 上真的存在
+用户名 `bigfish`（David Wilhelm，id 34862），于是该项目被算成了他的贡献。已用 `git filter-branch` 重写全部历史修正。
+
+**提交前先确认本地身份**，使用 GitHub 提供的 noreply 邮箱（`<用户ID>+<用户名>@users.noreply.github.com`）：
+
+```bash
+git config --global user.name "384615666"
+git config --global user.email "45287927+384615666@users.noreply.github.com"
+```
+
+改错了要修：
+
+```bash
+git filter-branch -f --env-filter '
+export GIT_AUTHOR_NAME="384615666"
+export GIT_AUTHOR_EMAIL="45287927+384615666@users.noreply.github.com"
+export GIT_COMMITTER_NAME="384615666"
+export GIT_COMMITTER_EMAIL="45287927+384615666@users.noreply.github.com"
+' -- --all
+git push --force origin main
+git push --force origin refs/tags/<tag>   # tag 也要单独强推
+```
+
+注意：GitHub 的贡献者列表有缓存，重写后网页可能要过一段时间（或触发一次统计重算）才会更新；
+API `/repos/{owner}/{repo}/contributors` 通常先变对。
